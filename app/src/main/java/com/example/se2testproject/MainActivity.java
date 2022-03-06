@@ -28,8 +28,48 @@ public class MainActivity extends AppCompatActivity {
 
                 extracted();
 
+                mod7();
             }
         });
+    }
+
+    private void mod7(){
+        EditText edit1 = findViewById(R.id.serverInput);
+        TextView text2 = findViewById(R.id.calcOutput);
+
+        String i = edit1.getText().toString();
+        int j = Integer.parseInt(i);
+
+        String output = "";
+
+        int copy = j;
+
+        int[] array = new int[i.length()];
+
+        for (int k=0; k<array.length; k++){
+            array[k]=copy%10;
+            copy=copy/10;
+        }
+
+        for (int k=0; k<array.length/2; k++){
+            int temp = array[k];
+            array[k]=array[array.length-1-k];
+            array[array.length-1-k]=temp;
+        }
+
+        for (int k=0; k<array.length; k++){
+            for (int l=k; l< array.length;l++){
+                if(array[k]!=0 && array[l]!=0) {
+                    if ((array[l] % array[k] == 0 && array[l] / array[k] > 1) || (array[k] % array[l] == 0 && array[k] / array[l] > 1)) {
+                        output += "["+k + " " + l + "] ";
+                        //System.out.println(array[k]+" "+array[l]);
+                    }
+                }
+            }
+        }
+
+        text2.setText(output);
+
     }
 
     private void extracted() {
