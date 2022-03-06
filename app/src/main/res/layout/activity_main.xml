@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/serverOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Antwort vom Server"
@@ -21,22 +21,23 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:text="Absenden"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/serverOutput"
         app:layout_constraintVertical_bias="0.246" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/serverInput"
         android:layout_width="286dp"
         android:layout_height="42dp"
         android:ems="10"
-        android:inputType="number"
         android:hint="Gib deine Matrikelnummer ein"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/serverOutput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
